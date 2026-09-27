@@ -4,7 +4,7 @@ MVP de Engenharia de Dados (PUC-Rio): pipeline de dados ponta a ponta (bronze/si
 
 [Relatório completo do projeto (PDF)](./relatorio.pdf) — contém o catálogo de dados campo a campo, as seis queries de negócio comentadas e as 29 figuras de evidência.
 
-Objetivo:
+**Objetivo:**
 
 Ingerir um CSV único do Kaggle (licença CC0, 64.016 registros), aplicar regras nomeadas de padronização (R1-R8) e deduplicação, materializar um esquema estrela (fato + 5 dimensões) com uma view para consultas de negócio, e responder a 6 perguntas de negócio:
 
@@ -13,13 +13,13 @@ Ingerir um CSV único do Kaggle (licença CC0, 64.016 registros), aplicar regras
 - Concentração de publicadoras — quais combinações de gênero × publicadora lideraram 2010-2019 e como a fatia do top 5 mudou dos anos 2000 para os anos 2010.
 - Crítica × vendas — venda média por faixa de nota crítica e o top 100 de vendas entre os jogos com nota 9 ou superior.
 
-Tecnologias
+**Tecnologias:**
 
 - Databricks Free Edition — PySpark, Unity Catalog, Delta Lake.
 - Notebooks Python para o pipeline e SQL para a análise de negócio.
 - Matplotlib para os gráficos das respostas.
 
-Arquitetura
+Arquitetura:
 
 Arquitetura medallion sobre Delta Lake, com um notebook por camada:
 
@@ -30,7 +30,7 @@ Arquitetura medallion sobre Delta Lake, com um notebook por camada:
                     └─> [03] gold          5 dimensões + fato_vendas_jogo + view v_jogo_vendas
                           └─> 6 queries de negócio + 6 gráficos
 
-Estrutura do repositório
+**Estrutura do repositório:**
 
 - 01_bronze_ingestao.ipynb	Ingestão, carimbo de linhagem (incluindo SHA-256) e carga Delta. Exportado com as saídas da última execução.
 - 02_silver_limpeza.ipynb	Regras R1-R8, deduplicação e perfil de qualidade (DMBOK). Exportado com as saídas da última execução.
@@ -38,9 +38,9 @@ Estrutura do repositório
 - relatorio.pdf	Relatório completo: catálogo de dados, queries comentadas e as 29 figuras de evidência.
 - README.md	Este arquivo.
 
-    O catálogo de dados campo a campo, as queries de negócio e todas as evidências de execução (prints da plataforma e saídas das consultas) estão consolidados no relatorio.pdf, conforme o item 5 da especificação da entrega.
+O catálogo de dados campo a campo, as queries de negócio e todas as evidências de execução (prints da plataforma e saídas das consultas) estão consolidados no relatorio.pdf, conforme o item 5 da especificação da entrega.
 
-Como executar
+**Como executar:**
 
 O pipeline é reproduzível em qualquer workspace do Databricks Free Edition:
 
