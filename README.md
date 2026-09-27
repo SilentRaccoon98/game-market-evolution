@@ -2,7 +2,7 @@
 
 MVP de Engenharia de Dados (PUC-Rio): pipeline de dados ponta a ponta (bronze/silver/gold) em Delta Lake no Databricks Free Edition sobre o mercado mundial de jogos eletrônicos, 1980-2024.
 
-[Relatório completo do projeto (PDF)](./relatório.pdf) — contém o catálogo de dados campo a campo, as seis queries de negócio comentadas e as 29 figuras de evidência.
+[Relatório completo do projeto (PDF)](./relatorio.pdf) — contém o catálogo de dados campo a campo, as seis queries de negócio comentadas e as 29 figuras de evidência.
 Objetivo
 
 Ingerir um CSV único do Kaggle (licença CC0, 64.016 registros), aplicar regras nomeadas de padronização (R1-R8) e deduplicação, materializar um esquema estrela (fato + 5 dimensões) com uma view para consultas de negócio, e responder a 6 perguntas de negócio:
